@@ -1,12 +1,21 @@
 
 import './App.css'
-//import { BrowserRouter } from 'react-router-dom';
+import Body from './Body';
+import Navbar from './Navbar';
+import { BrowserRouter,Routes,Route } from 'react-router-dom';
 
 function App() {
 
   return (
     <> 
-      <h1 className="font-bold">hello world</h1>
+    <BrowserRouter basename="/">
+    <Routes>
+      <Route path="/" element={<Body/>}>
+          <Route path="/login" element={<h1>Login</h1>} />
+      </Route>
+    </Routes>
+    </BrowserRouter>
+    
     </>
   );
 }
