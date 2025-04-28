@@ -21,8 +21,18 @@ const fetchConnections = async()=> {
 }
 useEffect(()=>{
     fetchConnections();
-},[])
+},[]);
 
+if(!connections){return}
+
+if(connections.length === 0){
+    return (
+        <div className="text-center my-10">
+            <h1 className="text-2xl font-bold">Connections</h1>
+            <p className="text-sm my-3">You have no connections yet.</p>
+        </div>
+    )
+}
 
   return (
     <div className="text-center my-10">

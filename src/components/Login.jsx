@@ -16,10 +16,10 @@ const Login = () => {
     try{
    const res = await axios.post(base_url+ '/login', {
      emailId,
-    password
-    },{withCredentials: true});
-    dispatch(addUser(res.data));
-    return navigate("/");
+     password
+      }, {withCredentials: true});
+     dispatch(addUser(res.data));
+     return navigate("/");
     }catch(err){
       setError(err?.response?.data || "Something went wrong");
       console.error(err);
