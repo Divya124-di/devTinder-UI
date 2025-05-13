@@ -21,6 +21,14 @@ const Feed = () => {
    useEffect(() => {
      getFeed();
    }, []);
+   if (!Feed) return;
+   if (Feed.length <= 0) {
+     return (
+       <div className="text-center my-10">
+         <p className="text-sm my-3">You have no feed yet.</p>
+       </div>
+     );
+   }
 
   return (Feed && (
     <div className='flex flex-wrap justify-center gap-4 mt-4'> 
