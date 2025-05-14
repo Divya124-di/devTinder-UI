@@ -1,9 +1,9 @@
 import { useState } from "react";
+import UserCard from "./UserCard";
 import axios from "axios";
 import { base_url } from "../utils/constant";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
-import UserCard from "./UserCard";
 
 const EditProfile = ({ user }) => {
   const [firstName, setFirstName] = useState(user.firstName);
@@ -38,7 +38,7 @@ const EditProfile = ({ user }) => {
         setShowToast(false);
       }, 3000);
     } catch (err) {
-      setError(err?.response?.data);
+      setError(err.response.data);
     }
   };
 

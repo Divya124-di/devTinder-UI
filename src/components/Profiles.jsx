@@ -8,7 +8,7 @@ const Profiles = () => {
   return ( user && (
     <div className="flex flex-wrap justify-center gap-4 mt-4">
       <EditProfile user={user}/>
-      <UserCard user={user}/>
+      {/* <UserCard user={user}/> */}
       </div>
   ))
 }
